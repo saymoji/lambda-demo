@@ -16,7 +16,7 @@ jobs:
             - lambda.zip
       - store_artifacts:
           path: target/lambda.zip
-  infra:
+  deploy:
     docker:
       - image: hashicorp/terraform:light
     steps:
@@ -31,6 +31,6 @@ workflows:
   lambda:
     jobs:
       - build
-      - infra:
+      - deploy:
           requires:
             - build
