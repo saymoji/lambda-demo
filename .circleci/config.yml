@@ -42,6 +42,6 @@ workflows:
   lambda:
     jobs:
       - build
-#      - deploy:
-#          requires:
-#            - build
+      - infra:
+          requires:
+            - build
