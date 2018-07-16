@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports.handler = (event, context, callback) => {
-    const response = {
+    const res = {
         statusCode: 200,
         headers: {
             'Access-Control-Allow-Origin': '*', // Required for CORS support to work
@@ -11,5 +11,5 @@ module.exports.handler = (event, context, callback) => {
             input: event,
         }),
     };
-    callback(null, response);
+    callback(null, res);
 };
