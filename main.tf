@@ -11,7 +11,7 @@ module "demo-api" {
 
   name         = "${var.name}"
   stage        = "${var.stage}"
-  description  = "route53 > api gateway > lambda"
+  description  = "route53 > api gateway > ${var.name}"
   runtime      = "nodejs8.10"
   handler      = "index.handler"
   memory_size  = 512
