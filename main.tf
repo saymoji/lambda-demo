@@ -23,7 +23,7 @@ module "demo-api" {
 
   zone_id         = "${module.domain.zone_id}"
   certificate_arn = "${module.domain.certificate_arn}"
-  domain_name     = "${var.name}-${var.stage}.${var.domain}"
+  domain_name     = "${var.stage}-${var.name}.${var.domain}"
 
   env_vars = {
     PROFILE = "${var.stage}"
