@@ -3,7 +3,7 @@ variable region {
 }
 
 variable name {
-  default = "demo-api"
+  default = "demo"
 }
 
 variable stage {
