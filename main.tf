@@ -1,5 +1,17 @@
 # Terraform Main
 
+provider "aws" {
+  region = "${var.region}"
+}
+
+terraform {
+  backend "s3" {
+    region = "ap-northeast-2"
+    bucket = "terraform-nalbam-seoul"
+    key = "demo-api.tfstate"
+  }
+}
+
 module "domain" {
   source = "git::https://github.com/nalbam/terraform-aws-route53.git"
   domain = "${var.domain}"
@@ -28,4 +40,8 @@ module "demo-api" {
   env_vars = {
     PROFILE = "${var.stage}"
   }
+}
+
+output "url" {
+  value = "https://${module.demo-api.domain}/demos"
 }
